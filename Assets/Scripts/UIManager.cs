@@ -7,17 +7,12 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public TMP_Text lapCounterText, bestLapTimeText, currentLapTimeText, positionText; 
-
+    public TMP_Text lapCounterText, bestLapTimeText, currentLapTimeText, positionText, countDownText, goText;
+    
     private void Awake()
     {
         instance = this;
     }
 
-    private void Update()
-    {
-        positionText.text = RaceManager.instance.playerPosition.ToString() + "/4";
-
-    }
 }
 
