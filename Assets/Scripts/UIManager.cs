@@ -7,8 +7,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public TMP_Text lapCounterText, bestLapTimeText, currentLapTimeText, positionText, countDownText, goText;
-    
+    public TMP_Text lapCounterText, bestLapTimeText, currentLapTimeText, positionText, countDownText, goText, raceResultText;
+
+    public GameObject resultsScreen;
     private void Awake()
     {
         instance = this;
