@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/juan david/senes/ayuda.unity
     guid: 46205baccb4ffe8448fe9f706cf5301d
   - enabled: 1
-    path: Assets/juan david/senes/nivel 1.unity
+    path: Assets/Scenes/nivel 1.unity
     guid: c01ea46a5d0e81645a433f58d19e6c84
   m_configObjects: {}

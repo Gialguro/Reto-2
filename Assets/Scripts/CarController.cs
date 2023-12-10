@@ -37,7 +37,9 @@ public class CarController : MonoBehaviour
     public bool isAI;
 
     public AudioSource engineSound;
-   
+
+    public GameObject resetObject;
+
 
     public int currentTarget;
     private Vector3 targetPoint;
@@ -64,7 +66,7 @@ public class CarController : MonoBehaviour
 
 
 
-        UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+        UIManager.instance.lapCounterText.text = currentLap + "/" + 4;
 
         resetCounter = resetCooldown;
     }
@@ -262,7 +264,7 @@ public class CarController : MonoBehaviour
                 var ts = System.TimeSpan.FromSeconds(bestLapTime);
                 UIManager.instance.bestLapTimeText.text = string.Format("{0:00}m{1:00}.{2:000}s", ts.Minutes, ts.Seconds, ts.Milliseconds);
 
-                UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
+                UIManager.instance.lapCounterText.text = currentLap + "/" + 4;
             }
         }
         else
@@ -307,6 +309,15 @@ public class CarController : MonoBehaviour
         resetCounter = resetCooldown;
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica si la colisión ocurrió con el objeto de reinicio
+        if (collision.gameObject == resetObject)
+        {
+            ResetToTrack();
+        }
+    }
 
 }
+
+
