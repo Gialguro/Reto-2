@@ -37,7 +37,7 @@ public class CarController : MonoBehaviour
     public bool isAI;
 
     public AudioSource engineSound;
-
+   
 
     public int currentTarget;
     private Vector3 targetPoint;
@@ -59,6 +59,10 @@ public class CarController : MonoBehaviour
             aiSpeedMod = Random.Range(.8f, 1.1f);
 
         }
+
+       
+
+
 
         UIManager.instance.lapCounterText.text = currentLap + "/" + RaceManager.instance.totalLaps;
 
@@ -302,5 +306,7 @@ public class CarController : MonoBehaviour
 
         resetCounter = resetCooldown;
     }
+
+    
 
 }
