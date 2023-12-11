@@ -1,15 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pausa : MonoBehaviour
 {
-    public Canvas pausaCanvas; // Asigna el Canvas desde el Editor de Unity
+    public Canvas pausaCanvas;
     private bool juegoPausado = false;
 
     void Start()
     {
-        pausaCanvas.enabled = false; // Asegúrate de que el Canvas esté desactivado al inicio
+        pausaCanvas.enabled = false;
+        SceneManager.sceneLoaded += OnSceneLoaded; 
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        juegoPausado = false; 
+        Time.timeScale = 1f; 
+        pausaCanvas.enabled = false;
+        AudioListener.pause = false;
     }
 
     void Update()
@@ -26,17 +36,21 @@ public class Pausa : MonoBehaviour
 
         if (juegoPausado)
         {
-            Time.timeScale = 0f; // Pausar el tiempo del juego
-            pausaCanvas.enabled = true; // Activar el Canvas de pausa
-            // Desactivar todos los sonidos en la escena
+            Time.timeScale = 0f;
+            pausaCanvas.enabled = true;
             AudioListener.pause = true;
         }
         else
         {
-            Time.timeScale = 1f; // Reanudar el tiempo del juego
-            pausaCanvas.enabled = false; // Desactivar el Canvas de pausa
-            // Activar nuevamente los sonidos en la escena
+            Time.timeScale = 1f;
+            pausaCanvas.enabled = false;
             AudioListener.pause = false;
         }
+    }
+
+   
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
