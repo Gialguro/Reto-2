@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 6783823}
   - component: {fileID: 6783822}
   - component: {fileID: 6783821}
+  - component: {fileID: 6783824}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -311,7 +312,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6783822}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6783824}
+        m_TargetAssemblyTypeName: ChangeSceneA, Assembly-CSharp
+        m_MethodName: loadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6783822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +363,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6783819}
   m_CullTransparentMesh: 1
+--- !u!114 &6783824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4894872bc1b19f74db361a2e1cefde6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagScene: 2
 --- !u!1 &12447919
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,7 +5152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff52c41bb2ac01d44bd771bb680f8ade, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10286,7 +10312,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.04764556, z: -0, w: 0.9988643}
   m_LocalPosition: {x: 84.2, y: 39.92, z: 76.5}
-  m_LocalScale: {x: 9.536414, y: 1, z: 1}
+  m_LocalScale: {x: 9.536414, y: 9.38, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 290778237}
@@ -13387,7 +13413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031252570}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000001365988, y: 0.9701426, z: -0.24253544, w: -0.000000005463952}
+  m_LocalRotation: {x: 0.000000001695173, y: 0.9701426, z: -0.24253544, w: 0.000000006780696}
   m_LocalPosition: {x: 0, y: 3.3799973, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21812,7 +21838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.050418302, g: 0.25865287, b: 0.9716981, a: 0.79607844}
+  m_Color: {r: 1, g: 0.38233837, b: 0.06132078, a: 0.79607844}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22492,7 +22518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749414407}
   serializedVersion: 2
-  m_LocalRotation: {x: -2.4815418e-24, y: 0.000000009939022, z: -0.0000000053008087, w: 1}
+  m_LocalRotation: {x: -4.9630837e-24, y: -0.000000014117921, z: 0.000000007529552, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23230,7 +23256,7 @@ Transform:
   m_GameObject: {fileID: 1810940324}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.04764556, z: -0, w: 0.9988643}
-  m_LocalPosition: {x: 84.24, y: 35, z: 53.38}
+  m_LocalPosition: {x: 83.91, y: 35, z: 49.89}
   m_LocalScale: {x: 9.536414, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
